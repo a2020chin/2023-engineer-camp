@@ -1,0 +1,33 @@
+{
+  "name": "2023-engineer-camp-week5",
+  "version": "0.0.0",
+  "private": true,
+  "license": "ISC",
+  "scripts": {
+    "start": "node ./bin/www",
+    "devcss": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css -w"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.7",
+    "connect-flash": "^0.1.1",
+    "connect-redis": "^7.1.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.3",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "openai": "^3.2.1",
+    "postcss": "^8.4.14",
+    "redis": "^4.6.7",
+    "tailwindcss": "^3.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "postcss-cli": "^10.0.0"
+  }
+}

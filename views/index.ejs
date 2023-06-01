@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 小工具</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body class="w-screen h-screen flex justify-center items-center bg-slate-900">
+    <div class="w-2/5 py-4 px-4">
+      <div
+        class="flex flex-col justify-end gap-2 bg-slate-700 h-[50vh] rounded-lg shadow-lg p-4"
+      >
+        <div class="flex-1 flex flex-col justify-end">
+          <% messages.map(function(message) { %>
+          <div
+            class="flex w-full mb-2 <%= message.sender !== 'me' ? 'justify-start' : 'justify-end' %>"
+          >
+            <div class="">
+              <% if (message.sender !== 'me') { %>
+              <img
+                class="w-11 h-11 rounded-full object-cover"
+                src="https://imgur.com/deV6hA4.png"
+                alt="ChatGPT"
+              />
+              <% } %>
+            </div>
+            <div
+              class="ml-2 p-3 rounded-lg text-white <%= message.sender !== 'me' ? 'bg-slate-400' : 'bg-cyan-400' %>"
+            >
+              <p><%= message.description %></p>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+        <form class="flex items-center" action="/" method="post">
+          <input
+            class="flex-1 mr-2 py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+            type="text"
+            name="message"
+            placeholder="請輸入想提問的問題"
+          />
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg"
+          >
+            送出
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
